@@ -1,0 +1,19 @@
+#grid {
+  display: grid;
+  grid-template-columns: repeat(2,15%) 1fr 1fr;
+  gap: 10px;
+  grid-template-areas:  "header header header header"
+                        "nav nav nav aside"
+                        "main . . aside"
+                        "footer footer footer footer"
+                        "ad ad ad ad";
+}
+
+#flex {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.microad {
+  display: none;
+}

@@ -1,0 +1,8 @@
+{
+	"benutzer": [
+		{"benutzername":"Musterfrau","mitarbeiterkennzahl":"1234567"},
+		{"benutzername":"Doe","mitarbeiterkennzahl":"7654321"},
+		{"benutzername":"Иванов","mitarbeiterkennzahl":"9875432"},
+		{"benutzername":"王五","mitarbeiterkennzahl":"23456789"}
+	]
+}

@@ -1,0 +1,25 @@
+
+tr { background: #efefef}
+th {font-weight:400}
+td { border:1px solid white; }
+th:nth-child(1) p { border-left: 4px solid silver; padding: 6px 8px; margin:0}
+td:nth-child(1) p { border-left: 4px solid #7573AD; padding: 6px 8px; margin:0}
+
+canvas { border: 1px solid silver; background: url(../img/grid-20-20.png) top left; display:block; }
+math { font-size:1.2rem; margin-bottom: 1em;}
+mfrac { font-size:1.1rem;}
+
+.jscanvas svg { width: 300px; height: 140px; margin: 1em auto}
+
+@media only screen and (min-width:680px)  {
+	#jscanvas svg { width: 450px; height: 210px;}
+}
+.withcanvas canvas {
+    display: block;
+    width: 100%;
+}
+.withcanvas {
+	position:relative;
+	width:100%;
+	margin: 1em auto 2em;
+}

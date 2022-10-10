@@ -1,0 +1,318 @@
+https://www.mediaevent.de/javascript/canvas.html
+
+<script>
+	"use strict";
+	
+    let canvas,ctx; 
+    let mouseX, mouseY, mouseDown = 0;
+    let touchX, touchY;
+
+    function drawDot(ctx,x,y,size) {
+        const r=0; 
+        const g=0; 
+        const b=0; 
+        const a=255;
+        ctx.fillStyle = "74bdf7";
+
+        ctx.beginPath();
+        ctx.arc(x, y, size, 0, Math.PI*2, true); 
+        ctx.closePath();
+        ctx.fill();
+    } 
+
+    function clearCanvas(canvas,ctx) {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+    }
+
+    function sketch_mouseDown() {
+        mouseDown=1;
+        drawDot(ctx,mouseX,mouseY,6);
+    }
+
+    function sketch_mouseUp() {
+        mouseDown=0;
+    }
+
+    function sketch_mouseMove(e) { 
+        getMousePos(e);
+
+        if (mouseDown==1) {
+            drawDot(ctx,mouseX,mouseY,6);
+        }
+    }
+
+    function getMousePos(e) {
+        if (!e) {
+            let e = event;
+        }
+
+        if (e.offsetX) {
+            mouseX = e.offsetX;
+            mouseY = e.offsetY;
+        }
+        else if (e.layerX) {
+            mouseX = e.layerX;
+            mouseY = e.layerY;
+        }
+     }
+
+    function sketchpad_touchStart() {
+        getTouchPos();
+        drawDot(ctx,touchX,touchY,6);
+        event.preventDefault();
+    }
+
+    function sketchpad_touchMove(e) { 
+        getTouchPos(e);
+        drawDot(ctx,touchX,touchY,6); 
+        event.preventDefault();
+    }
+
+    function getTouchPos(e) {
+        if (!e) {
+            let e = event;
+        }
+
+        if(e.touches) {
+            if (e.touches.length == 1) { // Only deal with one finger
+                var touch = e.touches[0]; // Get the information for finger #1
+                touchX=touch.pageX-touch.target.offsetLeft;
+                touchY=touch.pageY-touch.target.offsetTop;
+            }
+        }
+    }
+    
+let sketchpad = document.querySelector ('#sketchpad');
+let mql = window.matchMedia("(min-width:600px)");
+
+responsiveCanvas(mql);
+
+// Spezieller Event Listener für MediaQueryList
+mql.addListener(responsiveCanvas);
+
+function responsiveCanvas(mql) {
+    if (mql.matches) {
+        sketchpad.setAttribute('width','400');
+    } else {
+        sketchpad.setAttribute('width','280');
+    }
+}
+
+function init() {
+	canvas = document.getElementById('sketchpad');
+	if (canvas.getContext)
+		ctx = canvas.getContext('2d');
+	if (ctx) {
+		canvas.addEventListener('mousedown', sketch_mouseDown);
+		canvas.addEventListener('mousemove', sketch_mouseMove);
+		window.addEventListener('mouseup', sketch_mouseUp);
+
+		canvas.addEventListener('touchstart', sketchpad_touchStart);
+		canvas.addEventListener('touchmove', sketchpad_touchMove);
+	}
+
+	ctx.beginPath();
+	ctx.arc(100, 120, 90, 0, 2 * Math.PI);
+	ctx.stroke();
+}
+
+init();
+
+// Canvas zu PNG
+// Quelle: http://stackoverflow.com/questions/10673122/how-to-save-canvas-as-an-image-with-canvas-todataurl
+
+
+
+// Bild über HTML Formular mit einem hidden field (save_remote_data) an Server senden.
+// canvas-to-png.php ist ein PHP-Script auf dem Server
+// Quelle: http://stackoverflow.com/questions/13198131/how-to-save-a-html5-canvas-as-image-on-a-server
+
+document.querySelector("#savepng").addEventListener("click", function () {
+	var image_data = canvas.toDataURL("image/png");
+	console.log (image_data);
+	let img = document.createElement ("img");
+	img.src = image_data;
+	img.width = document.querySelector("#sketchpad").width;
+	img.height = document.querySelector("#sketchpad").height;
+	img.style = "border:1px solid silver";
+	document.querySelector('.canvaspng').append(img) // Place the image data into the form
+});
+</script>
+
+............................................................................
+
+<section data-title="Online Zeichnen mit Canvas">
+		<h2>Freihandzeichnen und Malen mit Canvas</h2>
+		<p>Zu den Kunststücken, die sich mit einem Canvas umsetzen lassen, gehören Zeichnen und Malen in Anwendungen und auf der Webseite im Browser.</p>
+		<p>Beispiel: Malen auf dem Canvas wie mit einem dicken Pinsel. Mal mal was:</p>
+
+		<div class="sketch" style="" position:relative""="">
+			<div class="box">
+				<p>Einfaches HTML-Canvas-Element als Sketchpad<br>
+				Zeichnen mit der Maus am Desktop oder dem Finger auf dem Touchscreen</p>
+				<p><input type="submit" value="Sketchpad löschen" onclick="clearCanvas(canvas,ctx);document.querySelector('.canvaspng').innerHTML = ''"></p>
+				<input id="savepng" type="submit" value="PNG speichern">
+			</div>
+			<div class="pad">
+				<canvas id="sketchpad" width="400" height="300"></canvas>
+			</div>
+		</div>
+		
+		<div class="canvaspng" style="text-align:center"></div>
+
+		<p>Drei Events informieren über die Aktionen der Maus
+		</p><ul>
+			<li><em>mousedown</em> (linke Maustaste ist gedrückt)
+			</li><li><em>mouseup</em> (Maustaste losgelassen)
+			</li><li><em>mousemove</em> (Maus wird bewegt, egal, ob die Maustaste dabei gedrückt ist oder nicht)
+		</li></ul>
+		
+		<p>Ein einfaches Tap auf dem Touchscreen wird als Mausklick interpretiert. Berührt der Finger auf dem iPad das Canvas-Element und bewegt sich dann, agiert der Touchscreen in seinem gewohnten Verhaltensmuster und scrollt die Seite. Das Script muss auf ein spezifisches Event des Touchpads horchen.</p>
+		<p>Entsprechend braucht der Touchscreen drei Touch-Events, um die Bewegung des Fingers in eine Zeichnung umzusetzen.</p>
+		<ul>
+			<li><em>touchstart</em>
+			</li><li><em>touchmove</em>
+			</li><li><em>touchend</em>
+		</li></ul>		
+            
+		<p>Das kleine Script zeichnet mit Kreisen. Das erkennt man sofort, wenn man den Finger oder die Maus schnell auf dem Canvas bewegt. Ebensogut würden kleine Linien funktionieren.</p>
+<script>
+	"use strict";
+	
+    let canvas,ctx; 
+    let mouseX, mouseY, mouseDown = 0;
+    let touchX, touchY;
+
+    function drawDot(ctx,x,y,size) {
+        const r=0; 
+        const g=0; 
+        const b=0; 
+        const a=255;
+        ctx.fillStyle = "74bdf7";
+
+        ctx.beginPath();
+        ctx.arc(x, y, size, 0, Math.PI*2, true); 
+        ctx.closePath();
+        ctx.fill();
+    } 
+
+    function clearCanvas(canvas,ctx) {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+    }
+
+    function sketch_mouseDown() {
+        mouseDown=1;
+        drawDot(ctx,mouseX,mouseY,6);
+    }
+
+    function sketch_mouseUp() {
+        mouseDown=0;
+    }
+
+    function sketch_mouseMove(e) { 
+        getMousePos(e);
+
+        if (mouseDown==1) {
+            drawDot(ctx,mouseX,mouseY,6);
+        }
+    }
+
+    function getMousePos(e) {
+        if (!e) {
+            let e = event;
+        }
+
+        if (e.offsetX) {
+            mouseX = e.offsetX;
+            mouseY = e.offsetY;
+        }
+        else if (e.layerX) {
+            mouseX = e.layerX;
+            mouseY = e.layerY;
+        }
+     }
+
+    function sketchpad_touchStart() {
+        getTouchPos();
+        drawDot(ctx,touchX,touchY,6);
+        event.preventDefault();
+    }
+
+    function sketchpad_touchMove(e) { 
+        getTouchPos(e);
+        drawDot(ctx,touchX,touchY,6); 
+        event.preventDefault();
+    }
+
+    function getTouchPos(e) {
+        if (!e) {
+            let e = event;
+        }
+
+        if(e.touches) {
+            if (e.touches.length == 1) { // Only deal with one finger
+                var touch = e.touches[0]; // Get the information for finger #1
+                touchX=touch.pageX-touch.target.offsetLeft;
+                touchY=touch.pageY-touch.target.offsetTop;
+            }
+        }
+    }
+    
+let sketchpad = document.querySelector ('#sketchpad');
+let mql = window.matchMedia("(min-width:600px)");
+
+responsiveCanvas(mql);
+
+// Spezieller Event Listener für MediaQueryList
+mql.addListener(responsiveCanvas);
+
+function responsiveCanvas(mql) {
+    if (mql.matches) {
+        sketchpad.setAttribute('width','400');
+    } else {
+        sketchpad.setAttribute('width','280');
+    }
+}
+
+function init() {
+	canvas = document.getElementById('sketchpad');
+	if (canvas.getContext)
+		ctx = canvas.getContext('2d');
+	if (ctx) {
+		canvas.addEventListener('mousedown', sketch_mouseDown);
+		canvas.addEventListener('mousemove', sketch_mouseMove);
+		window.addEventListener('mouseup', sketch_mouseUp);
+
+		canvas.addEventListener('touchstart', sketchpad_touchStart);
+		canvas.addEventListener('touchmove', sketchpad_touchMove);
+	}
+
+	ctx.beginPath();
+	ctx.arc(100, 120, 90, 0, 2 * Math.PI);
+	ctx.stroke();
+}
+
+init();
+
+// Canvas zu PNG
+// Quelle: http://stackoverflow.com/questions/10673122/how-to-save-canvas-as-an-image-with-canvas-todataurl
+
+
+
+// Bild über HTML Formular mit einem hidden field (save_remote_data) an Server senden.
+// canvas-to-png.php ist ein PHP-Script auf dem Server
+// Quelle: http://stackoverflow.com/questions/13198131/how-to-save-a-html5-canvas-as-image-on-a-server
+
+document.querySelector("#savepng").addEventListener("click", function () {
+	var image_data = canvas.toDataURL("image/png");
+	console.log (image_data);
+	let img = document.createElement ("img");
+	img.src = image_data;
+	img.width = document.querySelector("#sketchpad").width;
+	img.height = document.querySelector("#sketchpad").height;
+	img.style = "border:1px solid silver";
+	document.querySelector('.canvaspng').append(img) // Place the image data into the form
+});
+</script>
+
+		</section>

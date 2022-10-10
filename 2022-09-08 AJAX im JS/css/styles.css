@@ -1,0 +1,22 @@
+/* Stylesheet-Datei */
+/*
+	Mehrzeiliger
+	Kommentar
+*/
+
+h1 {
+	color: #0000ff;
+}
+h2 {
+	color: red;
+	text-shadow: -1px -1px 1px #fff, 5px 3px 9px #000;
+}
+h3 {
+	color: rgb(0,255,0);
+}
+#passwordhelp {
+	border: 1px solid orange;
+	padding: 0 10px; /* oben, rechts, unten, links; hier verkürzt */
+	border-radius: 15%;
+	background-color: beige;
+}

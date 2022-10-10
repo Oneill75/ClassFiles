@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="de">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Scrollin progress</title>
+	<script>
+
+var wpXO, wpYO, dboW, dboH, wiW, wiH, dbsT, ddEsT, ddEsH, ddEcH, pr;
+ 
+document.addEventListener('DOMContentLoaded', () => {
+
+	wpXO = document.getElementById("windowpageXOffset");
+	wpYO = document.getElementById("windowpageYOffset");
+
+	dboW = document.getElementById("documentbodyoffsetWidth");
+	dboH = document.getElementById("documentbodyoffsetHeight");
+
+	wiW  = document.getElementById("windowinnerWidth");
+	wiH  = document.getElementById("windowinnerHeight");
+	
+	dbsT  = document.getElementById("documentbodyscrollTop");
+	ddEsT = document.getElementById("documentdocumentElementscrollTop");
+	ddEsH = document.getElementById("documentdocumentElementscrollHeight");
+	ddEcH = document.getElementById("documentdocumentElementclientHeight");
+
+	
+	wpXO.innerText = window.pageXOffset;
+	wpYO.innerText = window.pageYOffset;
+
+	dboW.innerText = document.body.offsetWidth;
+	dboH.innerText = document.body.offsetHeight;
+
+	wiW.innerText  = window.innerWidth;
+	wiH.innerText  = window.innerHeight;
+	
+	dbsT.innerText  = document.body.scrollTop;
+	ddEsT.innerText = document.documentElement.scrollTop;
+	ddEsH.innerText = document.documentElement.scrollHeight;
+	ddEcH.innerText = document.documentElement.clientHeight;
+
+	pr = document.getElementById('progress');
+	pr.value = 0; pr.max = 1;
+
+});
+
+window.addEventListener('scroll', () => {
+
+	wpXO.innerText = window.pageXOffset;
+	wpYO.innerText = window.pageYOffset;
+
+	dboW.innerText = document.body.offsetWidth;
+	dboH.innerText = document.body.offsetHeight;
+
+	wiW.innerText  = window.innerWidth;
+	wiH.innerText  = window.innerHeight;
+
+	dbsT.innerText  = document.body.scrollTop;
+	ddEsT.innerText = document.documentElement.scrollTop;
+	ddEsH.innerText = document.documentElement.scrollHeight;
+	ddEcH.innerText = document.documentElement.clientHeight;
+
+	document.body.style.setProperty('--scroll', window.pageYOffset / (document.body.offsetHeight - window.innerHeight));
+	pr.value = window.pageYOffset / (document.body.offsetHeight - window.innerHeight);
+
+});
+
+
+	</script>
+	<style>
+	body {
+		height: 200em;
+	}
+/*
+ * https://css-tricks.com/books/greatest-css-tricks/scroll-animation/
+ */
+.progress {
+  /* */ height: 3px;
+  width: 0%;
+  background-color: #fff;
+  position: fixed;
+  top: 0;
+  left: 0;
+  animation: progress 1s linear;
+}
+@keyframes progress {
+  to {
+    background-color: red; /* rgb(20, 255, 226) */;
+    width: 100%;
+  }
+}
+:root * {
+  /* Pause the animation */
+  animation-play-state: paused;
+  /* Bind the animation to scroll */
+  animation-delay: calc(var(--scroll) * -1s);
+  /* These last 2 properites clean up overshoot weirdness */
+  animation-iteration-count: 1;
+  animation-fill-mode: both;
+}
+
+#progress {
+	height: 6px;
+	width: 99%;
+}
+#progress, #info {
+	position: fixed;
+}
+	</style>
+</head>
+<body>
+<div class="progress"></div>
+
+<progress id="progress" value="70" max="100">70 %</progress>
+
+<p id="info">
+window.pageXOffset: <span id="windowpageXOffset"></span><br>
+window.pageYOffset: <span id="windowpageYOffset"></span><br>
+
+document.body.offsetWidth: <span id="documentbodyoffsetWidth"></span><br>
+document.body.offsetHeight: <span id="documentbodyoffsetHeight"></span><br>
+
+window.innerWidth: <span id="windowinnerWidth"></span><br>
+window.innerHeight: <span id="windowinnerHeight"></span><br>
+
+document.body.scrollTop: <span id="documentbodyscrollTop"></span><br>
+document.documentElement.scrollTop: <span id="documentdocumentElementscrollTop"></span><br>
+
+document.documentElement.scrollHeight: <span id="documentdocumentElementscrollHeight"></span><br>
+
+document.documentElement.clientHeight: <span id="documentdocumentElementclientHeight"></span>
+</p>
+
+
+
+
+</body>
+</html>

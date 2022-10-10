@@ -1,0 +1,18 @@
+#grid {
+  display: grid;
+  grid-template-columns: repeat(2,15%) 1fr 1fr;
+  grid-template-rows: repeat(6, 1fr);
+  gap: 10px;
+  grid-template-areas:  "nav nav nav nav"
+                        "header header header header"
+                        "microad . ad ad"
+                        "main main ad ad"
+                        "footer footer footer footer"
+                        "aside aside aside aside";
+}
+
+#flex {
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: column;
+}

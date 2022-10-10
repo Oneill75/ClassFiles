@@ -1,0 +1,52 @@
+<!DOCTYPE HTML>
+<html lang="de">
+<head>
+		<meta charset="UTF-8">
+		<title>Sketchpad-Mediaevent</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link href="css/styles-mediaevent.css" rel="stylesheet">
+		<link href="css/styles-mediaevent1.css" rel="stylesheet">
+		<link href="css/styles-mediaevent2.css" rel="stylesheet">
+		<script src="js/script-mediaevent.js" defer></script>
+		<link href="/favicon.ico" rel="icon" type="image/ico">
+</head>
+<body>
+	<section data-title="Online Zeichnen mit Canvas">
+		<h2>Freihandzeichnen und Malen mit Canvas</h2>
+		<p>Zu den Kunststücken, die sich mit einem Canvas umsetzen lassen, gehören Zeichnen und Malen in Anwendungen und auf der Webseite im Browser.</p>
+		<p>Beispiel: Malen auf dem Canvas wie mit einem dicken Pinsel. Mal mal was:</p>
+
+		<div class="sketch" style="" position:relative""="">
+			<div class="box">
+				<p>Einfaches HTML-Canvas-Element als Sketchpad<br>
+				Zeichnen mit der Maus am Desktop oder dem Finger auf dem Touchscreen</p>
+				<p><input type="submit" value="Sketchpad löschen" onclick="clearCanvas(canvas,ctx);document.querySelector('.canvaspng').innerHTML = ''"></p>
+				<input id="savepng" type="submit" value="PNG speichern">
+			</div>
+			<div class="pad">
+				<canvas id="sketchpad" width="400" height="300"></canvas>
+			</div>
+		</div>
+		
+		<div class="canvaspng" style="text-align:center"></div>
+
+		<p>Drei Events informieren über die Aktionen der Maus
+		</p><ul>
+			<li><em>mousedown</em> (linke Maustaste ist gedrückt)
+			</li><li><em>mouseup</em> (Maustaste losgelassen)
+			</li><li><em>mousemove</em> (Maus wird bewegt, egal, ob die Maustaste dabei gedrückt ist oder nicht)
+		</li></ul>
+		
+		<p>Ein einfaches Tap auf dem Touchscreen wird als Mausklick interpretiert. Berührt der Finger auf dem iPad das Canvas-Element und bewegt sich dann, agiert der Touchscreen in seinem gewohnten Verhaltensmuster und scrollt die Seite. Das Script muss auf ein spezifisches Event des Touchpads horchen.</p>
+		<p>Entsprechend braucht der Touchscreen drei Touch-Events, um die Bewegung des Fingers in eine Zeichnung umzusetzen.</p>
+		<ul>
+			<li><em>touchstart</em>
+			</li><li><em>touchmove</em>
+			</li><li><em>touchend</em>
+		</li></ul>		
+            
+		<p>Das kleine Script zeichnet mit Kreisen. Das erkennt man sofort, wenn man den Finger oder die Maus schnell auf dem Canvas bewegt. Ebensogut würden kleine Linien funktionieren.</p>
+
+		</section>
+	</body>
+</html>

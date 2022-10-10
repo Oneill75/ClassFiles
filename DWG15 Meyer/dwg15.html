@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="de">
+	<head>
+		<meta charset="UTF-8">
+		<title>DWG14-LV</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<script src="js/script.js" defer></script>
+		<link rel="stylesheet" href="css/styles.css">
+		<link href="/favicon.ico" rel="icon" type="image/ico">
+	</head>
+	<body>
+		<main class="main">
+			<h1>DWG15-LV</h1>
+			<h2>Ihre Lottozahlen 6 aus 49</h2>
+			<p id="lottozahlen"></p>
+		</main>
+		<aside id="schriftgroesse">
+			<label for="reglerSchriftgroesse">Schriftgröße ändern:</label>
+			<!-- orient-Attribut für Firefox, für andere Browser siehe CSS -->
+			<!-- https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/range -->
+			<input type="range" id="reglerSchriftgroesse"orient="vertical"></input>
+			<label for="reglerAusgabe">Schriftgröße:</label>
+			<output for="reglerSchriftgroesse" id="reglerAusgabe"></output>
+		</aside>
+	</body>
+</html>

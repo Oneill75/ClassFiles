@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ru">
+	<head>
+		<meta charset="UTF-8">
+		<title>Named Characters in HTML</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="expires" content="0">
+		<style>
+			code {
+				display: inline-block;
+				min-width: 15em;
+			}
+		</style>
+	</head>
+	<body>
+
+	<h1>Named Characters in HTML</h1> 
+
+	<p>Grundlegende Syntax: <code>&amp;[name];</code></p>
+	<p>Siehe:</p>
+	<p><a href="https://html.spec.whatwg.org/multipage/named-characters.html" title="WHATWG">https://html.spec.whatwg.org/multipage/named-characters.html</a></p>
+	<p><a href="https://dev.w3.org/html5/html-author/charref" title="W3C">https://dev.w3.org/html5/html-author/charref</a></p>
+	<p>&nbsp;</p><!-- Diese Art Abstandhalter nach Möglichkeit vermeiden! -->
+	<p>Beispiele:</p>
+	<p>(In den ersten beiden Beispielen wird das Semikolon weggelassen.)</b>
+	<p><code>&amp;gt7 &amp;lt6</code>				ergibt: &gt7 &lt6</p>
+	<p><code>10&amp;gt5 und  1&amp;lt2</code>		ergibt: 10&gt5 und  1&lt2</p>
+	<p><code>&amp;gt; &amp;lt;</code>				ergibt: &gt;&lt;</p>
+	<p><code>12,00&amp;nbsp;Euro</code>				ergibt: 12,00&nbsp;Euro (geschütztes Leerzeichen vor der Maßeinheit)</p>
+	<p><code>&amp;quot;Lorem ipsum&amp;quot;</code>	ergibt: &quot;Lorem ipsum&quot;</p>
+	<p><code>&amp;auml;</code>						ergibt: &auml;</p>
+	<p><code>&amp;Ouml;</code>						ergibt: &Ouml;</p>
+	<p><code>&amp;szlig;</code>						ergibt: &szlig;</p>
+	<p><code>&amp;ndash;</code>						ergibt: &ndash; (Halbgeviertstrich, siehe <a href="https://de.wikipedia.org/wiki/Halbgeviertstrich" title="Wikipedia">https://de.wikipedia.org/wiki/Halbgeviertstrich</a>)</p>
+	<p><code>&amp;copy;</code>						ergibt: &copy;</p>
+	<p><code>&amp;COPY;</code>						ergibt: &COPY</p>
+	<p>Auch Codes sind möglich:</p>
+	<p><code>&amp;#x000A9;</code>					ergibt: &#x000A9</p>
+	<p><code>&amp;#169;</code> 						ergibt: &#169;</p>
+	</body>
+</html>

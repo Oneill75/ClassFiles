@@ -1,0 +1,30 @@
+:root {
+	font-size: 18px;
+}
+
+/* https://developer.mozilla.org/en-US/docs/Web/CSS/WebKit_Extensions */
+aside#schriftgroesse {
+	position: fixed;
+	bottom: 0;
+	right: 0;
+	-webkit-transform: rotate(180deg);
+	transform: rotate(180deg);
+	-webkit-writing-mode: vertical-rl;
+	writing-mode: vertical-rl;
+	white-space: nowrap;
+}
+
+/* 
+ * writing mode from the default to bt-lr,
+ * or bottom-to-top and left-to-right,
+ * for Edge and Internet Explorer, and add -webkit-appearance:
+ * slider-vertical for all -webkit-based browsers
+ * https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/range/
+ *
+ */
+input[type="range"] {
+	transform: rotate(180deg);
+	writing-mode: bt-lr;
+	-webkit-appearance: slider-vertical;
+	width: 1%;
+}

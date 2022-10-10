@@ -1,0 +1,11 @@
+#dropZone, #fileDropZone {
+  width: 350px;
+  height: 70px;
+  padding: 10px;
+  border: 1px solid #aaaaaa;
+}
+
+#image {
+  width:336; 
+  height:69;
+}
