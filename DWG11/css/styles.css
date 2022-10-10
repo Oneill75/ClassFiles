@@ -1,0 +1,74 @@
+html {
+  background: rgb(240, 239, 239);
+  min-width: 600px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+body {
+  font-family: 'Open Sans', Verdana, Arial, Helvetica, sans-serif, 'Geometr706';
+}
+
+.kopfleistebild {
+  background: rgb(211, 197, 197);
+  padding: 20px;
+  padding-left: 50px;
+  margin: 0 auto;
+}
+
+.kopfleiste ul{
+  background-color: #0098A1;
+  color: white;
+  padding: 10px;
+  padding-left: 0;
+  display: flex;
+  list-style-type: none;
+  text-align: left;
+  flex-direction: row;
+  justify-content: space-evenly;
+  margin: 0 auto;
+}
+
+#http {
+  clear: both;
+  margin: 0 auto;
+  text-align: center;
+  display: block;
+}
+
+
+/*  ================================================================================================= */
+/*  Grid-Area */
+/*  ================================================================================================= */
+
+.item-a {
+  grid-area: header;
+}
+
+.item-b {
+  grid-area: main;
+}
+
+.item-c {
+  grid-area: aside;
+}
+
+.item-d {
+  grid-area: section;
+}
+
+.item-e {
+  grid-area: footer;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 100px 100px 100px 100px 100px;
+  grid-template-rows: 100px 100px 100px 100px 100px;
+  grid-template-areas:
+    "header header header header header"
+    "main main . . aside"
+    "section section section section section"
+    "footer footer footer footer footer";
+
+}

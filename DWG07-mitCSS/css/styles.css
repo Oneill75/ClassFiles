@@ -1,0 +1,21 @@
+#video video {
+    width: 400px;
+}
+
+#video01, #video02 {
+    width: 400px !important;   /* Important priorisiert dieses Attribut */ 
+}
+
+object {
+    width: 100%;
+    height: 300px;
+}
+
+embed {
+    width: 50%;
+    height: 300px;
+}
+
+iframe {
+    border: none;
+}

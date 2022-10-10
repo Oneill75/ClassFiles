@@ -1,0 +1,61 @@
+* {
+	font-family: sans-serif;
+}
+
+nav, footer p {
+    color: #fff;
+    padding: 10px;
+    background-image: linear-gradient(239deg, #4fc2aa 0%, #0d9da6 100%);
+}
+
+h1, p {
+	color: #31b4a8;
+}
+
+h1 ~ p {
+	color: black;
+}
+
+a {
+	text-decoration: none;
+	color: #fff;
+}
+
+ul {
+	list-style-type: none;
+}
+
+button {
+	background-image: linear-gradient(239deg, #4fc2aa 0%, #0d9da6 100%);
+	color: #fff;
+	height: 3.5em;
+	border: none;
+	border-radius: 48%;
+}
+
+/* Grid-area */
+
+header{
+	grid-area: header;
+	padding: 0;
+}
+
+nav {
+	grid-area: nav;
+}
+
+article {
+	grid-area: article;
+}
+
+main {
+	grid-area: main;
+}
+
+aside {
+	grid-area: aside;
+}
+
+footer {
+	grid-area: footer;
+}

@@ -1,0 +1,32 @@
+:root {
+	--firstColor: rgb(240, 245, 255); 
+	--secondColor: rgb(200, 225, 215); 
+	--thirdColor: rgb(160, 205, 175);
+	--fourthColor: rgb(120, 165, 135);
+	--fifthColor: rgb(80, 125, 95);
+	--sixthColor: rgb(40, 85, 45);
+	--seventhColor: rgb(0, 45, 5);
+}
+@keyframes changeBackGround {
+  from {background-color: transparent;}
+  to {background-color: red;}
+}
+
+* {
+	border: 1px solid;
+    display: block;
+    width: 80%;
+    margin: .5em auto;
+    padding: .5em;
+}
+html { background-color: var(--firstColor); }
+head { background-color: var(--secondColor); }
+body { background-color: var(--thirdColor); }
+main { background-color: var(--forthColor); }
+h1 { background-color: var(--fifthColor); }
+section { background-color: var(--sixthColor); }
+article { background-color: var(--seventhColor); }
+h2 { background-color: var(--firstColor); }
+h3 { background-color: var(--secondColor);}
+p { background-color: var(--thirdColor); }
+button { background-color: var(--fourthColor); }

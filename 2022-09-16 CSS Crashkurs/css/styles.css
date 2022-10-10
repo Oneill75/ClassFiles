@@ -1,0 +1,94 @@
+/* * betrifft alle HTML Elemente der Seite */
+* {
+    color: green;
+    background-color: rgb(85, 150, 206);
+}
+
+html {
+    /*font-size: 10px; /^* px means pixels: the base font size is 10px */
+    font-family: "Open Sans", sans-serif; /* Schriftarten werden von Links nach Rechts versucht zu nutzen */
+    color: red; /* Farbe bleibt grün, da * die höhere Priorität hat */
+    background-color: olive;
+}
+
+body {
+    background-color: aquamarine;
+}
+
+/* Verwenden von Pseudo Klassen mit (:) */
+/* Die Reihenfolge muss wie hier erfolgen!!!!!!! */
+/* unvisited link */
+a:link {
+    color: black;
+}
+
+/* visited link */
+a:visited {
+    color: orange;;
+}
+
+/* mouse over link */
+a:hover {        
+    color: red;
+    background-color: yellow;
+}
+
+/* selected link */
+a:active {
+    color: yellow;
+} 
+
+p {
+    color: red;
+}
+
+p:first-child {
+    color: yellow;
+}
+
+/* Attribut-Selector */
+a[target="_blank"] {
+    background-color: yellow;
+}
+
+/* Pseudoelemente */
+p::first-letter {
+    color: cyan;
+    font-size: 5em;
+}
+
+#div01, #div01 p {
+    background-color: white;
+}
+
+/* margin: 0 auto um Elemente in der Seite zu Zentrieren. Lässt sich auch super auf anderen Geräten ausführen */
+#div01 {
+    border: dotted 3px red;
+    width: 50%;                 /* Bezieht sich auf den Viewport */
+}
+
+#div02 {
+    background-image: linear-gradient(red,yellow) !important;
+    text-align: centered;
+    height: 200px;
+    position: absolute;
+    top: 0;
+    width: 100%;
+}
+
+#div02 p{
+    background-color: transparent;
+}
+
+#img01 img{
+    display: block;
+    width: 5%;
+}
+
+img {
+    width: 100%;
+}
+
+.centered_block {
+    margin: 0 auto;
+}

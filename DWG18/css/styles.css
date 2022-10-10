@@ -1,0 +1,7 @@
+hr {
+	border-style: none none dotted;
+	border-width: 1px;
+}
+.ul_no_list_style {
+	list-style: none;
+}

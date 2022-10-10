@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="de">
+	<head>
+		<meta charset="UTF-8">
+		<title>Video, Audio, Object, Embed, IFrame</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta name="expires" content="0">
+	</head>
+	<body>
+
+		<h1>Video, Audio, Object, Embed, IFrame</h1>
+
+		<section id="video">
+
+			<h2>HTML-video-Element</h2>
+
+			<h3>Video mit Bedienelementen, selbststartend</h3>
+
+			<p><del>Es soll möglich sein, die Video-Dateien small.mp4 bzw.
+			small.ogv aus dem Ordner media abzuspielen, das Abspielen soll automatisch beginnen.<br>
+			Bedienelemente sollen sichtbar sein.<br>
+			Falls der benutzte Browser dazu nicht in der Lage ist, soll der Text
+			"Das HTML-video-Element wird von diesem Browser nicht untersützt."
+			ausgegeben werden.<br>
+			Das Video soll 400 Pixel breit sein.<br>
+			Nachdem Sie den Code zum Einbinden des Videos innerhalb der beiden HTML-
+			Kommentare vollständig eingeben haben, zeichnen Sie diesen Absatz als
+			"nicht mehr korrekt/zutreffend" aus.</del></p>
+
+			<!-- Begin: Video with controls, autostart -->
+			<video width="400" autoplay muted controls>
+				<source src="media/small.mp4" type="video/mp4">
+				<source src="media/small.ogv" type="video/ogv">
+				Das HTML-video-Element wird von diesem Browser nicht untersützt.
+			</video>
+			<!-- End: Video with controls, autostart -->
+
+			<h3>Video ohne Bedienelemene, nicht selbststartend</h3>
+
+			<p><del>Es sollen dieselben Dateien wie oben abgespielt werden können.<br>
+			Bedienelemente sollen jedoch nicht sichtbar sein und das Abspielen nicht automatisch beginnen.<br>
+			Falls der benutzte Browser dazu nicht in der Lage ist, soll der Text
+			"Das HTML-video-Element wird von diesem Browser nicht untersützt."
+			ausgegeben werden.<br>
+			Das Video soll ebenfalls 400 Pixel breit sein.<br>
+			Nachdem Sie den Code zum Einbinden des Videos innerhalb der beiden HTML-
+			Kommentare vollständig eingeben haben, zeichnen Sie auch diesen Absatz als
+			"nicht mehr korrekt/zutreffend" aus.</del></p>
+
+			<!-- Begin: Video without controls, no autostart -->
+			<video width="400" mute>
+				<source src="media/small.mp4" type="video/mp4">
+				<source src="media/small.ogv" type="video/ogv">
+				Das HTML-video-Element wird von diesem Browser nicht untersützt.
+			</video>
+			<!-- End: Video without controls, no autostart -->
+
+		</section>
+
+		<section id="audio">
+
+			<h2>HTML-audio-Element</h2>
+
+			<h3>Audio mit Bedienelementen, nicht selbststartend</h3>
+
+			<p><del>Es soll möglich sein, die audio-Dateien 0229.mp3 bzw.
+			0229.ogg aus dem Ordner media abzuspielen, das Abspielen soll nicht 
+			automatisch beginnen.<br>
+			Bedienelemente sollen sichtbar sein.<br>
+			Falls der benutzte Browser dazu nicht in der Lage ist, soll der Text
+			"Das HTML-audio-Element wird von diesem Browser nicht untersützt."
+			ausgegeben werden.<br>
+			Nachdem Sie den Code zum Einbinden des Videos innerhalb der beiden HTML-
+			Kommentare vollständig eingeben haben, zeichnen Sie diesen Absatz als
+			"nicht mehr korrekt/zutreffend" aus.</del></p>
+
+			<!-- Begin: Audio with controls -->
+			<video controls>
+				<source src="media/0229.mp3" type="audio/mp3">
+				<source src="media/0229.ogg" type="audio/ogg">
+				Das HTML-video-Element wird von diesem Browser nicht untersützt.
+			</video>
+			<!-- End: Audio with controls -->
+
+		</section>
+
+		<section id="object">
+
+			<h2>HTML-object-Element</h2>
+
+			<h3>PDF-Datei einbinden</h3>
+
+			<p><del>Es soll möglich sein, die PDF-Datei abc.pdf aus dem Ordner
+			docs wiederzugeben.<br>
+			Das Objekt soll die gesamte Bidschirmbreite einnehmen.
+			Falls der benutzte Browser das Objekt nicht darstellen kann, soll ein passender
+			Text mit einem Link zu der PDF-Datei ausgegeben werden.<br>
+			Nachdem Sie den Code zum Einbinden der PDF-Datei innerhalb der beiden HTML-
+			Kommentare vollständig eingeben haben, zeichnen Sie diesen Absatz als
+			"nicht mehr korrekt/zutreffend" aus.</del></p>
+
+			<!-- Begin: Object -->
+			<object width="100%" height="500px" data="docs/abc.pdf">PDF kann auf dieser Seite nicht angezeigt werrden. Link zum PDF <a href="docs/abc.pdf" target="_blank">abc.pdf</a></object>
+			<!-- End: Object -->
+
+		</section>
+
+		<section id="embed">
+
+			<h2>HTML-embed-Element</h2>
+
+			<h3>HTML-Datei einbinden</h3>
+
+			<p><del>Es soll möglich sein, die HTML-Datei snippet.html aus dem Ordner
+			docs wiederzugeben.<br>
+			Das Element soll die halbe Bidschirmbreite einnehmen.
+			Nachdem Sie den Code zum Einbinden der HTML-Datei innerhalb der beiden HTML-
+			Kommentare vollständig eingeben haben, zeichnen Sie diesen Absatz als
+			"nicht mehr korrekt/zutreffend" aus.</del></p>
+
+			<!-- Begin: Embed -->
+			<embed src="docs/snippet.html" width="50%">
+			<!-- End: Embed -->
+
+		</section>
+
+		<section id="iframe">
+
+			<h2>HTML-iframe-Element</h2>
+
+			<h3>Youtube-Video einbinden</h3>
+
+			<p><del>Das Video mit der URL https://www.youtube.com/embed/tgbNymZ7vqY
+			soll abgespielt werden können, das Abspielen soll ohne Ton automatisch
+			ab der Zeitmarke 1 Minute und 15 Sekunden beginnen und sich nicht wiederholen.<br>
+			Nachdem Sie den Code zum Einbinden der HTML-Datei innerhalb der beiden HTML-
+			Kommentare vollständig eingeben haben, zeichnen Sie diesen Absatz als
+			"nicht mehr korrekt/zutreffend" aus.</del></p>
+
+			<!-- Begin: Iframe -->
+			<iframe src="https://www.youtube.com/embed/tgbNymZ7vqY?autoplay=1&mute=1&start=75"></iframe>
+			<!-- End: Iframe -->
+
+		</section>
+
+		<footer>
+			<p>Quellen der Media-Dateien:<br>
+			http://techslides.com/sample-webm-ogg-and-mp4-video-files-for-html5<br>
+			https://bigsoundbank.com</p>
+		</footer>
+	</body>
+</html>

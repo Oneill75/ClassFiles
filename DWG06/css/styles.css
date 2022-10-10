@@ -1,0 +1,15 @@
+.bordered {
+    border: 1px solid blue;
+    text-align: center;
+}
+.darkened {
+    border: 1px solid blue;
+    background-color: #335cff3d;
+    text-align: center;
+}
+.no-spacing {
+    border-spacing:0;
+}
+.leftalign {
+    padding-left: 15px;
+}

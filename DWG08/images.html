@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="de">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href="css/styles.css" rel="stylesheet" type="text/css" media="screen">
+	<title>Images</title>
+</head>
+<body>
+	<h1>Images etc.</h1>
+
+	<hr>
+
+	<p>Smiley: Von Pumbaa80 - Eigenes Werk, Gemeinfrei,
+<a href="https://commons.wikimedia.org/w/index.php?curid=723508"
+   target="_blank">https://commons.wikimedia.org/w/index.php?curid=723508</a></p>
+	<p><em>Verändern Sie die Breite des Browserfensters, am besten in der Geräteemulation.</em></p>
+
+	<hr>
+
+	<h2>Inhalt</h2>
+
+	<ul>
+		<li><a href="#img01" target="_blank">HTML-img-Element &mdash; png- und svg-Datei in Originalgröße</a></li>
+		<li><a href="#img02" target="_blank">HTML-img-Element &mdash; png- und svg-Datei in veränderter Größe (proportional)</a></li>
+		<li><a href="#img03" target="_blank">HTML-img-Element &mdash; png- und svg-Datei in veränderter Größe (nicht proportional)</a></li>
+		<li><a href="#fig01" target="_blank">HTML-figure-Element &mdash; png-Datei in ursprünglicher Größe (32 px &times; 32 px)</a></li>
+		<li><a href="#fig02" target="_blank">HTML-figure-Element &mdash; png-Datei in veränderter Größe (proportional)</a></li>
+		<li><a href="#fig03" target="_blank">HTML-figure-Element &mdash; png-Datei in veränderter, abhängiger Größe (proportional)</a></li>
+		<li><a href="#pic01" target="_blank">HTML-picture-Element &mdash; png-Datei in veränderter, abhängiger Größe (proportional)</a></li>
+		<li><a href="#pic01" target="_blank">HTML-picture-Element &mdash; png-Datei in veränderter, abhängiger Größe (proportional)</a></li>
+	</ul>
+
+	<hr>
+
+	<h2>HTML-img-Element</h2>
+
+	<details id="img01">
+		<summary>HTML-img-Element &mdash; png- und svg-Datei in Originalgröße</summary>
+
+		<p>smiley.png wird ohne Größenangabe geladen,
+d. h. in der Originagröße 32 px &times; 32 px.</p>
+		<p><img src="img/smiley.png" alt="Wo ist die Bilddatei?"></p>
+
+		<p>smiley.svg wird ohne Größenangabe geladen,
+d. h. in der Originagröße 800 px &times; 800 px.</p>
+		<p><img src="img/smiley.svg" alt="Wo ist die Bilddatei?"></p>
+	</details>
+
+
+	<details id="img02">
+		<summary>HTML-img-Element &mdash; png- und svg-Datei in veränderter Größe (proportional)</summary>
+
+		<p><em>Achten Sie auf die Wiedergabequalität!</em></p>
+
+		<p><em>Nutzen Sie die HTML-Attribute</em>
+<code>width</code> und <code>height</code>
+<em>zukünftig nicht mehr!</em></p>
+
+		<p>smiley.png wird mit dem HTML-Attribut <code>height="200"</code> geladen,
+d. h. in der Größe 200 px &times; 200px.</p>
+		<p><img src="img/smiley.png" alt="Wo ist die Bilddatei?" id="bild01"></p>
+
+		<p>smiley.svg wird mit dem HTML-Attribut <code>width="50%"</code> geladen,
+d. h. ausgedehnt auf 50 Prozent der verfügbaren Bildschirmbreite!</p>
+		<p><img src="img/smiley.svg" alt="Wo ist die Bilddatei?" id="bild02"></p>
+	</details>
+
+
+	<details id="img03">
+		<summary>HTML-img-Element &mdash; png- und svg-Datei in veränderter Größe (nicht proportional)</summary>
+
+		<p><em>Achten Sie auf die Wiedergabequalität!</em></p>
+
+		<p>smiley.png wird mit den HTML-Attributen <code>width="200"</code> und
+<code>height="100"</code> geladen, d. h. in der Größe 200 px &times; 100 px.</p>
+		<p><img src="img/smiley.png" alt="Wo ist die Bilddatei?"></p>
+
+		<p>smiley.svg wird mit den HTML-Attributen <code>width="200"</code> und
+<code>height="100"</code> geladen, d. h. in der Größe 200 px &times; 100 px.</p>
+		<p><em>Welche Größe wird wirklich geändert?</em>
+		<p><img src="img/smiley.svg" alt="Wo ist die Bilddatei?"></p>
+	</details>
+
+	<h2>HTML-figure-Element</h2>
+	
+	<details id="fig01">
+		<summary>HTML-figure-Element &mdash; png-Datei in ursprünglicher Größe (32 px &times; 32 px)</summary>
+		<p>Das figure-Element enthält einen img- und einen figcaption-Tag.</p>
+		<figure>
+			<img src="img/smiley.png" alt="Wo ist die Bilddatei?">
+			<figcaption>Das ist ein Smiley.</figcaption>
+		</figure>
+	</details>
+
+	<details id="fig02">
+		<summary>HTML-figure-Element &mdash; png-Datei in veränderter Größe (proportional)</summary>
+		<p><em>Achten Sie auf die Wiedergabequalität!</em></p>
+		<p>Das figure-Element enthält einen img- und einen figcaption-Tag.</p>
+		<p>smiley.png wird mit dem HTML-Attribut <code>width="100%"</code> geladen,
+d. h. ausgedehnt auf 100 Prozent der verfügbaren Bildschirmbreite!.</p><figure>
+			<img src="img/smiley.png" alt="Wo ist die Bilddatei?">
+			<figcaption>Das ist ein Smiley.</figcaption>
+		</figure>
+	</details>
+
+	<details id="fig03" style="width: 50%;">
+		<summary>HTML-figure-Element &mdash; png-Datei in veränderter, abhängiger Größe (proportional)</summary>
+		<p><em>Achten Sie auf die Wiedergabequalität!</em></p>		<p>Das figure-Element enthält einen img- und einen figcaption-Tag.</p>
+		<p>smiley.png wird mit dem HTML-Attribut <code>width="100%"</code> geladen,
+d. h. ausgedehnt auf 100 Prozent der vom details-Tag zur Verfügung gestellten Breite !.</p><figure>
+			<img src="img/smiley.png" alt="Wo ist die Bilddatei?">
+			<figcaption>Das ist ein Smiley.</figcaption>
+		</figure>
+	</details>
+
+
+	<h2>HTML-picture-Element</h2>
+
+	<details id="pic01">
+		<summary>HTML-picture-Element &mdash; png-Datei in veränderter, abhängiger Größe</summary>
+		<picture>
+			<source media="(min-width: 1200px)" srcset="img/hugesmiley.png">
+			<source media="(min-width: 600px)" srcset="img/bigsmiley.png">
+			<img src="img/smiley.png" alt="Wo ist die Bilddatei?">
+		</picture>
+	</details>
+
+	<details id="pic02">
+		<summary>HTML-picture-Element &mdash; png-Datei in veränderter, abhängiger Größe</summary>
+		<picture>
+			<source media="(min-width: 1200px)" srcset="img/hugesmiley.png">
+			<source media="(min-width: 600px)" srcset="img/bigsmiley.png">
+			<img src="img/smiley.png" alt="Wo ist die Bilddatei?">
+		</picture>
+	</details>
+
+	</body>
+</html>

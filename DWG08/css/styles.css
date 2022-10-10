@@ -1,0 +1,49 @@
+/* Verwenden von Pseudo Klassen mit (:) */
+/* Die Reihenfolge muss wie hier erfolgen!!!!!!! */
+/* unvisited link */
+a:link {
+  color: blue;
+}
+
+/* visited link */
+a:visited {
+  color: darkviolet;
+}
+
+/* mouse over link */
+a:hover {        
+  color: darkblue;
+}
+
+/* selected link */
+a:active {
+  color: yellow;
+} 
+
+#bild01 {
+  height: 200px;
+}
+
+#bild02 {
+  width: 50%;
+}
+
+#img03 img{
+  height: 100px;
+  width: 200px;
+}
+
+#fig02 img{
+  width: 100%;
+}
+
+#fig03 img{
+  width: 50%;
+}
+
+#pic02 picture{
+  border: 3px dotted red; 
+  display: block; 
+  width: 50%;
+  margin: 0 auto;
+}

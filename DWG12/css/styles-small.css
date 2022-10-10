@@ -1,0 +1,76 @@
+#grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  grid-template-areas: "header header"
+                       "nav nav"
+                       "main main"
+                       "article article"
+                       "aside aside"
+                       "footer footer"
+}
+
+#menu-main-navigation {
+  display: flex;
+  flex-direction: column;
+}
+
+*{
+  width: 100%;
+  margin: 0 auto;
+}
+
+main {
+  text-align: center;
+}
+
+/* ================================================================= */
+
+/* Hamburger Button */
+
+/* ================================================================= */
+
+
+/*.header-menu #menu-main-navigation {
+  display: none;
+}*/
+
+label.hamburg { 
+  display: block;
+  background: #555; width: 75px; height: 50px; 
+  position: relative; 
+  margin-left: auto; margin-right: auto;
+  border-radius: 4px; 
+}
+
+input#hamburg {display:none}
+
+.line { 
+  position: absolute; 
+  left:10px;
+  height: 4px; width: 55px; 
+  background: #fff; border-radius: 2px;
+  display: block; 
+  transition: 0.5s; 
+  transform-origin: center; 
+}
+
+.line:nth-child(1) { top: 12px; }
+.line:nth-child(2) { top: 24px; }
+.line:nth-child(3) { top: 36px; }
+
+#hamburg:checked + .hamburg .line:nth-child(1){
+  transform: translateY(12px) rotate(-45deg);
+}
+
+#hamburg:checked + .hamburg .line:nth-child(2){
+  opacity:0;
+}
+
+#hamburg:checked + .hamburg .line:nth-child(3){
+  transform: translateY(-12px) rotate(45deg);
+}
+
+#hamburg:checked ~ .topnav {
+  display: flex;
+}

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="de">
+	<head>
+		<meta charset="UTF-8">
+		<title>Knoten, Elemente, Kinder</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="expires" content="0">
+		<link rel="stylesheet" href="css/styles.css">
+		<script src="js/script-nodes.js" defer></script>
+	</head>
+	<body>
+
+		<h1>Knoten, Elemente, Kinder</h1>
+
+		<hr>
+
+		<p>Lesen Sie bitte zuerst dies: <a href="https://wiki.selfhtml.org/wiki/JavaScript/DOM/Node" title="JavaScript/DOM/Node" target="_blank">SelfHTML Wiki: JavaScript/DOM/Node</a><br>
+und das: <a href="https://wiki.selfhtml.org/wiki/JavaScript/DOM/Element" title="JavaScript/DOM/Element" target="_blank">SelfHTML Wiki: JavaScript/DOM/Element</a></p>
+<p>Oder dies: <a href="https://www.w3schools.com/js/js_htmldom_nodes.asp" title="JavaScript HTML DOM Elements (Nodes)" target="_blank">w3schools.com: JavaScript HTML DOM Elements (Nodes)</a><br>
+und das: <a href="https://www.w3schools.com/js/js_htmldom_elements.asp" title="JavaScript HTML DOM Elements" target="_blank">w3schools.com: JavaScript HTML DOM Elements</a></p>
+<p>(Oder ein anderes Kompendium Ihrer Wahl.)</p>
+
+		<hr>
+		
+		<p>In den HTML-Kommentaren lesen Sie, welche Funktionen aus dem
+eingebundenen JavaScript verwendet werden sollen.</p>
+		<p>In der JavaScript-Datei lesen Sie, welche Methoden verwendet werden sollen.</p>
+
+		<hr>
+
+		<p>Hier soll eine neue Liste (ul), bestehend aus 3 Einträgen (li), folgen.</p>
+		<input type="button" id="newlist" value="Ganz neue Liste | appendChild():">
+		<div id="ulwrap">
+		<!-- Neue Liste via function addNewUl() hier: -->
+		</div>
+		<hr>
+
+		<p>Liste (unordered (bulleted) list) mit einem leeren Listenelement.<br>
+Hier soll der leere Listeneintrag (li) gefüllt werden.</p>
+		<input type="button" id="fillthegap" value="Listeneintrag füllen | appendChild():">
+		<ul>
+			<li id="myLe"><!-- Neuer Text via function addListItemText() hier: --></li>
+		</ul>
+
+		<hr>
+
+		<p>Liste (unordered (bulleted) list) mit drei Listenelementen.<br>
+Hier soll ein neuer Listeneintrag (&lt;li&gt;Ananas&lt;/li&gt;) an erster Stelle eingefügt werden.</p>
+		<input type="button" id="newfirstlistitem" value="Neuer erster Listeneintrag | insertBefore():">
+		<ul id="fruits">
+			<!-- Neuer Listeneintrag via function addNewFirstListItem() hier: -->
+			<li>Äpfel</li>
+			<li>Bananen</li>
+			<li>Birnen</li>
+		</ul>
+
+		<hr>
+
+		<p>Liste (ordered (numbered) list) mit drei Listenelementen.<br>
+Java gehört nicht in die Liste, deshalb soll der Listeneintrag entfernt werden.</p>
+		<input type="button" id="removelastlistitem" value="Letzten Listeneintrag entfernen | removeChild():">
+		<ol id="languages">
+			<li>Perl</li>
+			<li>PHP</li>
+			<li>Python</li>
+			<li>Java <!-- Diesen Listeneintrag via function removeLastListItem() entfernen. --></li>
+		</ol>
+
+		<p id="removelastlistitemerror"></p>
+
+		<hr>
+
+		<p>Diese Liste (ul) ist nicht vollständig.<br>
+Das fehlende fünfte Listenelement soll dem Dokument im Inline-Frame entnommen werden.<br>
+Dort hat es nichts zu suchen.</p>
+		<input type="button" id="obtainlistitem" value="Listeneintrag stehlen | adoptNode():">
+		<ul class="ul_no_list_style">
+			<li>Punkt,</li>
+			<li>Punkt,</li>
+			<li>Komma,</li>
+			<li>Strich &mdash;</li>
+			<!-- Listeneintrag via function stealFromIframe() hierher verschieben: -->
+		</ul>
+
+		<iframe src="docs/iframe.html" height="200" width="300"></iframe>
+
+	</body>
+</html> 

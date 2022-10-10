@@ -1,0 +1,8 @@
+/*
+ * Quelle: https://javascript.info/bubbling-and-capturing
+ *
+ */
+body * {
+	margin: 10px;
+	border: 1px solid blue;
+}

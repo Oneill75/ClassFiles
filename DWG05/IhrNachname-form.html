@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Lieblingsfilmformular</title>
+    </head>
+
+    <body>
+        <h1>Wählen Sie Ihren Lieblingsfilm</h1>
+        <fieldset>
+            <legend>Genre:</legend>
+            <input list="genrelist" id="genre" name="genre" placeholder="Eingeben oder wählen ... " size="25">
+            <datalist id="genrelist">
+                <option value="Action"></option>
+                <option value="Horror"></option>
+                <option value="Fantasy"></option>
+                <option value="SciFi"></option>
+                <option value="Adventure"></option>
+                <option value="Dokumentation"></option>
+            </datalist>
+        </fieldset>
+        <fieldset>
+            <legend>Filmtitel</legend>
+            <select name="filmtitel" id="filmtitel">
+                <option selected disabled>Noch kein Genre gewählt.</option>
+            </select>
+        </fieldset>
+        <fieldset>
+            <legend>Leihdauer</legend>
+            <label for="leihtage">Anzahl der Leihtage:</label>
+            <input type="number" id="leihtage" name="leihtage">
+        </fieldset>
+        <fieldset>
+            <legend>Übertragung</legend>
+            <label for="dsl">DSL</label>
+            <input type="radio" id="dsl" name="dsl">
+            <label for="dsl">Mobil</label>
+            <input type="radio" id="mobil" name="mobil">
+        </fieldset>
+        <fieldset>
+            <legend>Kontaktdaten</legend>
+            <label for="fname">Vorname</label>
+            <input type="text" id="fname" name="fname" placeholder="Ihr Vorname">
+            <label for="lname">Nachname</label>
+            <input type="text" id="lname" name="lname" placeholder="Ihr Nachname">
+            <label for="email">E-Mail</label>
+            <input type="text" id="email" name="email" placeholder="Ihre E-Mail Adresse">
+            <label for="altemail">Alternative E-Mail Adresse</label>
+            <input type="text" id="altemail" name="altemail" placeholder="Alternative E-Mail">
+        </fieldset>
+        <fieldset>
+            <legend>Authentifizierung</legend>
+            <label for="gebdatum">Geburtdatum:</label>
+            <input type="text" id="gebdatum" name="gebdatum" placeholder= "TT.MM.YYYY" required pattern="\d{2}.\d{2}.\d{4}">
+            <label for="pw">Passwort</label>
+            <input type="password" id="pw" name="pw" placeholder="Mindestens 64 Zeichen." minlength="64" required>
+        </fieldset>
+        <fieldset>
+            <legend>Daten senden oder verwerfen</legend>
+            <input type="checkbox" id="permit" name="permit">
+            <label for="permit">Ich bin mit der Übertragung meiner Daten einverstanden.</label>
+            <input type="button" value="Daten absenden">
+            <input type="button" value="Zurücksetzen">
+        </fieldset>
+    </body>
+
+</html>
