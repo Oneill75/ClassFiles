@@ -9,26 +9,32 @@ loginform.addEventListener('submit', (ev) => {
 	queryDatabase(ev.target.lastElementChild.value);
 });
 
+/** Function to send a request to the response.php.
+ * 
+ * First it will print the formSubmitValue into the console.
+ * If the formSubmitValue is "Login", it will send form data from login.html on login only.
+ * If the formSubmitValue is "Logout", an empty form will be sent.
+ * 
+ * Sends a async request to the response.php with POST-method.
+ * 
+ * @param formSubmitValue String value for the IF-Statement to compare with 'Login'
+ */
 function queryDatabase(formSubmitValue) {
 	
 	console.log(formSubmitValue);
 	
-	let formTransmitted; // typeof formTransmitted === 'undefined',
-						 // this is to send form data from login.html on login only,
-						 // on logout an empty form is to be sent
+	let formTransmitted; // typeof formTransmitted === 'undefined'
 	if(formSubmitValue == 'Login') { 
 		formTransmitted = loginform;
 	}
 
 	let formData = new FormData(formTransmitted);
-	// FormData() does not capture this button, so it must be added manually:
 	formData.append('submit', loginform.lastElementChild.value);
 	
 	fetch(url, {
 		method: 'POST',
 		body: formData,
 	}).then(async response => {
-		// if (response.ok) { // that seems to be unnecessary
 			let responseJSON = await response.json(); // must wait for response!
 			console.log(responseJSON);
 			infoparagraph.innerText = JSON.stringify(responseJSON);
@@ -37,7 +43,6 @@ function queryDatabase(formSubmitValue) {
 			} else {
 				loginform.lastElementChild.value = 'Login';
 			}
-		// }
 	}).catch(console.error);
 	
 }

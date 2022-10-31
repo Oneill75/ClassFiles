@@ -1,8 +1,13 @@
 <?php
 $dataForJSON = ['response' => 'ok'];
-// https://www.php.net/manual/en/function.empty.php
+
+/*
+this IF-statement checks if $_Post is not empty.
+If $_POST is not empty, the codeblock will inside the IF statement will be executed.
+
+If $_POST is empty, die() will be executed and the script will be stopped.
+*/
 if(!empty($_POST)) {
-	// https://www.php.net/manual/en/function.isset.php
 	if(isset($_POST['username'])) {
 		$username = htmlspecialchars($_POST['username']);
 	}
@@ -19,7 +24,6 @@ if(!empty($_POST)) {
 	die(json_encode(['response' => 'failed']));		// stops the script execution if $_POST is empty
 }
 
-// https://www.php.net/manual/en/function.isset.php
 // "If multiple parameters are supplied then isset() will return true only
 // if all of the parameters are considered set.
 // Evaluation goes from left to right and stops as soon as an unset variable is encountered."
