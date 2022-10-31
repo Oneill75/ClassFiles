@@ -64,7 +64,7 @@ class Dbconnect {
 		echo "</br>";
     $this->prepareExecuteStatement($sql,'Select-');
 
-    // return $stmt->fetchAll();
+    return $stmt->fetchAll();
   }
 
   public function deleteTable($tablename) {

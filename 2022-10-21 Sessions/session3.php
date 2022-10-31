@@ -1,5 +1,9 @@
 <pre>
 <?php
+ini_set("session.save_path",'G:\xampp\fi321sessions');
+ini_set("session.use_strict_mode",'1');
+// ini_set("session.use_cookies",'0');
+ini_set("session.name",'FI321sess');
 session_start();
 $_SESSION['pageid'] = '0003';
 echo 'Hallo Welt 2';
