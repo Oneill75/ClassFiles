@@ -1,0 +1,10 @@
+/*
+ * The :invalid CSS pseudo-class represents any <form>,
+ * <fieldset>, <input> or other <form> element
+ * whose contents fail to validate.
+ * https://developer.mozilla.org/en-US/docs/Web/CSS/:invalid
+ *
+ */
+input:invalid {
+  border: red solid 3px;
+}
